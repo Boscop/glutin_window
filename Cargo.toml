@@ -22,9 +22,8 @@ gl = "0.6.0"
 glutin = {git = 'https://github.com/Boscop/glutin'}
 #pistoncore-input = "0.14.0"
 #pistoncore-input = {path = 'D:\projects\forks\piston\src\input'}
-#pistoncore-input = {git = 'https://github.com/Boscop/piston/tree/master/src/input'}
+pistoncore-input = {git = 'https://github.com/Boscop/piston'}
 #pistoncore-window = "0.22.0"
 #pistoncore-window = {path = 'D:\projects\forks\piston\src\window'}
-#pistoncore-window = {git = 'https://github.com/Boscop/piston/tree/master/src/window'}
-piston = {git = 'https://github.com/Boscop/piston'}
+pistoncore-window = {git = 'https://github.com/Boscop/piston'}
 shader_version = "0.2.1"
