@@ -60,7 +60,8 @@ fn builder_from_settings(settings: &WindowSettings) -> glutin::WindowBuilder {
         .with_multitouch()
         .with_gl(GlRequest::Specific(Api::OpenGl, (major as u8, minor as u8)))
         .with_title(settings.get_title())
-        .with_srgb(Some(settings.get_srgb()));
+        .with_srgb(Some(settings.get_srgb()))
+        .with_parent(settings.get_parent());
     let samples = settings.get_samples();
     if settings.get_fullscreen() {
         builder = builder.with_fullscreen(glutin::get_primary_monitor());

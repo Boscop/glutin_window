@@ -17,7 +17,10 @@ path = "src/lib.rs"
 
 [dependencies]
 gl = "0.6.0"
-glutin = "0.6.1"
-pistoncore-input = "0.14.0"
-pistoncore-window = "0.22.0"
+#glutin = "0.6.1"
+glutin = {path = 'D:\projects\forks\glutin'}
+#pistoncore-input = "0.14.0"
+pistoncore-input = {path = 'D:\projects\forks\piston\src\input'}
+#pistoncore-window = "0.22.0"
+pistoncore-window = {path = 'D:\projects\forks\piston\src\window'}
 shader_version = "0.2.1"
