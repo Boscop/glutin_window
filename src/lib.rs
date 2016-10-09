@@ -4,18 +4,19 @@
 
 extern crate glutin;
 extern crate gl;
-extern crate input;
-extern crate window;
+//extern crate input;
+//extern crate window;
+extern crate piston;
 extern crate shader_version;
 
 // External crates.
-use input::{
+use piston::input::{
     keyboard,
     MouseButton,
     Button,
     Input,
 };
-use window::{
+use piston::window::{
     BuildFromWindowSettings,
     OpenGLWindow,
     Window,
@@ -135,7 +136,7 @@ impl GlutinWindow {
 
     fn poll_event(&mut self) -> Option<Input> {
         use glutin::Event as E;
-        use input::{ Input, Motion };
+        use piston::input::{ Input, Motion };
         // Check for a pending mouse cursor move event.
         if let Some(pos) = self.cursor_pos {
             self.cursor_pos = None;
@@ -167,7 +168,7 @@ impl GlutinWindow {
     fn handle_event(&mut self, ev: Option<glutin::Event>) -> Option<Input> {
         use glutin::Event as E;
         use glutin::MouseScrollDelta;
-        use input::{ Key, Input, Motion };
+        use piston::input::{ Key, Input, Motion };
 
         match ev {
             None => {
@@ -202,7 +203,7 @@ impl GlutinWindow {
                 Some(Input::Release(Button::Keyboard(map_key(key)))),
             Some(E::Touch(glutin::Touch { phase, location, id })) => {
                 use glutin::TouchPhase;
-                use input::{Touch, TouchArgs};
+                use piston::input::{Touch, TouchArgs};
 
                 Some(Input::Move(Motion::Touch(TouchArgs::new(
                     0, id as i64, [location.0, location.1], 1.0, match phase {
@@ -360,7 +361,7 @@ impl OpenGLWindow for GlutinWindow {
 
 /// Maps Glutin's key to Piston's key.
 pub fn map_key(keycode: glutin::VirtualKeyCode) -> keyboard::Key {
-    use input::keyboard::Key;
+    use piston::input::keyboard::Key;
     use glutin::VirtualKeyCode as K;
 
     match keycode {
